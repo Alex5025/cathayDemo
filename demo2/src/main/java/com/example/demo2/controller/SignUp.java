@@ -26,7 +26,6 @@ public class SignUp {
         return adminMapper.toVO(admin);
     }
 
-
     @GetMapping("getAdminBo/{account}")
     public AdminBO getEmployeesById(@PathVariable String account) {
         Admin adminVO = accountService.getAdminInfoByAccount(account);
