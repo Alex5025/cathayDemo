@@ -7,6 +7,7 @@ import com.example.demo2.model.user.Admin;
 import com.example.demo2.model.vo.AdminVO;
 import com.example.demo2.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,6 +21,7 @@ public class SignUp {
 
     @PostMapping(value = "SignUp")
     public AdminVO signAccount(
+            // @Validated
             @RequestBody AdminDTO adminDTO) {
         Admin admin = adminMapper.toPO(adminDTO);
         accountService.saveData(admin);
